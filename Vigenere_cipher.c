@@ -8,13 +8,13 @@ int main(void)
 	char big_letter[26] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
 	
 	printf("Encrypt or Decrypt? E or D :");
-	scanf("%c",&function);//选择加密 or 解密
-	
-	if (function == 'E'){//加密
+	scanf("%c",&function);//Encrypt or Decrypt
+
+	if (function == 'E'){//Encrypt
 		printf("Please input the Key:");
-		scanf("%s",Key);//输入密匙
+		scanf("%s",Key);//Input key
 		printf("Please input the Insert:");
-		scanf("%s", Insert);//输入明文
+		scanf("%s", Insert);//Input plaintext
 		int len = strlen(Key);
 		for (i = 0; i <= len - 1; i++){
 
@@ -31,21 +31,21 @@ int main(void)
 		}
 
 }
-	else if (function == 'D'){//解密
+	else if (function == 'D'){//Decrypt
 		printf("Please input the Key:");
-		scanf("%s",Key);//输入密匙
+		scanf("%s",Key);//Input key
 		printf("Please input the Insert:");
-		scanf("%s", Insert);//输入密文
+		scanf("%s", Insert);//Input ciphertext
 		int len = strlen(Key);
 
 		for (i = 0; i <= len - 1; i++){
 
-			for (letter_to_num = 0; letter_to_num <= 25; letter_to_num++){//将Key转化为偏移量
+			for (letter_to_num = 0; letter_to_num <= 25; letter_to_num++){//Convert Key to move
 				if (big_letter[letter_to_num] == Key[i]){
 					move = letter_to_num;
 				}
 			}
-			 		if(Insert [i]- move <'A'){//输出结果
+			 		if(Insert [i]- move <'A'){//Output
 					  putchar(Insert [i]- move + 26);
 				    } else {
 					  putchar(Insert [i]- move);
